@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Tutor Database</title>
+ 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+  <link href='http://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<nav class="top_nav navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Home and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topnavbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span> 
+        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span>
+      </button>
+      <a class="pull-left"><%= link_to "Student Tutor Database", root_path, class: "title" %></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div id="topnavbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+          <!-- li class="dropdown"> 
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Departments <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+<li><a href="#">CSE</a></li>
+            </ul>
+          </li -->
+          <li><%= link_to current_user.name, current_user %></li>
+          <li><%= link_to "Log out", log_out_path %></li>
+        <% else %>
+          <li><%= link_to "Sign up", sign_up_path %></li>
+          <li><%= link_to "Log in", log_in_path %><li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<%= yield %>
+
+<nav class="bottom-nav navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bottomnavbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span> 
+        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div id="bottomnavbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Contact Us", contact_us_path %></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
+<br>
+<br>
+
+
+
+</body>
+</html>

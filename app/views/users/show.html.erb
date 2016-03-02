@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <h1>
+    <%= @user.name %>
+    <% if @current_user.id == @user.id %>
+      <%= link_to 'Edit Profile', edit_user_path(current_user), class:"btn btn-sm btn-default" %> 
+    <% end %>
+  </h1>
+ 
+ <h4>Contact Information: <%= @user.email %></h4>
+
+  <div class="col-md-5 col-xs-5" style="padding-top:10px">
+    <h4><u>Current Classes</u></h4>
+    <% @lectures.each do |lecture| %>
+    <ul>
+      <li><%= lecture.name %></li>
+    </ul>
+    <% end %>
+  </div>
+  
+  <div class="col-md-5 col-xs-5" style="padding-top:10px">
+    <h4><u>Posts</u></h4>
+      <% @posts.each do |post| %>
+      <ul style="list-style-type:none">
+        <li><%= link_to post.title, post, class:"postlinks" %></li>
+      </ul>
+      <% end %>
+  </div>
+
+ 
+</div>
+

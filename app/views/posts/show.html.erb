@@ -1,0 +1,31 @@
+<div class="container-fluid">
+
+<h2><%= @post.lecture.name %></h2><br>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= link_to @post.user.name, @post.user %>
+  (<%= @post.user.email %>)
+</p>
+ 
+<p>
+  <strong>Compensation:</strong>
+  $<%= @post.price %>/hr
+</p>
+
+<p class="text">
+  <strong>Text:</strong>
+  <%= @post.text %>
+</p><br>
+
+<% if current_user.name == @post.user.name %>
+  <%= link_to 'Edit', edit_post_path(@post), class:"btn btn-sm btn-default" %>
+  <%= link_to 'Delete', post_path(@post), class:"btn btn-sm btn-default", method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+</div>

@@ -1,0 +1,23 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  font-family: 'Roboto';
+}
+
+.intro {
+  text-align:center;
+  padding-top:80px;
+  letter-spacing:-1px;
+}
+
+.postlist {
+  td > a {
+    color:#000000;
+  }
+}
+
+.classlink, 
+.classlink:hover {
+  color:#000000;
+}

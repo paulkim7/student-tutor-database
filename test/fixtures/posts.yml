@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+tutor:
+  title: Tutor Services
+  text: I am offering my tutoring services for the class CSE 110.
+  price: 15
+  user_id: lectures(:one).user_id 
+  lecture_id: lectures(:one).lecture_id 
+
+student:
+  title: Looking for Help
+  text: Help! I need help in CSE 110. Can anyone help?
+  price: 15
+  user_id: lectures(:two).user_id
+  lecture_id: lectures(:one).lecture_id

@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <% if current_user %>
+
+      <h2>Class Feed  
+      <%= link_to "New Post", new_post_path, class: "btn btn-sm btn-default" %>
+      </h2>
+      <% if current_user.lectures.empty? %>
+        Head over to your profile to add some classes! Click on the "Edit Profile" button to add classes and change your profile information.
+      <% else %>
+        <% @lectures.each do |lecture| %>
+        <h3> <%= link_to lecture.name, lecture, class:"classlink" %> </h3>
+        
+          <table>
+            <tr>
+              <th><u> Post </u></th>
+              <th><u> User </u></th>
+              <th><u> Price </u></th>
+            </tr>
+            <% lecture.posts.each do |post| %>
+              <tr class="postlist">
+                  <td><%= link_to post.title, post %>&nbsp&nbsp&nbsp&nbsp</td>
+                  <td><%= link_to post.user.name, post.user %>&nbsp&nbsp&nbsp&nbsp</td>
+                  <td> $<%= post.price %>/hr</td>
+              </tr>
+            <% end %>
+          </table>
+        <% end %>
+      <% end %> 
+    <% else %>
+     <div class="intro jumbotron">
+      <h1>Get the right tutors, right now</h1>
+      <h2>Find the help you need</h2>
+      <h3>Make posts to get help</h3>
+      <h3>Make posts to provide help</h3> <br>
+      <%= link_to "Sign up now!", sign_up_path, class: "btn btn-lg btn-default" %>
+    </div>
+    <% end %>
+  </div>
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+SE:
+  name: CSE 110. Software Engineering
+  department_id: 1 
+
+ADS:
+  name: CSE 100. Advanced Data Structures
+  department_id: 1

@@ -1,0 +1,17 @@
+<h1 style="padding-top:10px"><%= @lecture.name %></h1>
+
+<table>
+  <tr>
+    <th><u> Post </u></th>
+    <th><u> User </u></th>
+    <th><u> Price </u></th>
+  </tr>
+  <% @posts.each do |post| %>
+      <tr>
+        <td><%= link_to post.title, post, class:"postlink" %>&nbsp&nbsp&nbsp&nbsp </td>
+        <td><%= post.user.name %> &nbsp&nbsp&nbsp&nbsp </td>
+        <td> $<%= post.price %>/hr</td>
+      </tr>
+  
+  <% end %>
+</table>

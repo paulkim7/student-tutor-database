@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+tutorbob:
+  name: Bob Joe
+  email: bjoe@ucsd.edu
+  password_hash: MyString
+  password_salt: MyString
+
+studenttom:
+  name: Tom Doe
+  email: tdoe@ucsd.edu
+  password_hash: MyString
+  password_salt: MyString
